@@ -5,10 +5,12 @@ const fsp = require("fs/promises");
 const cp = require('child_process');
 const stream = require('stream');
 const { stdout } = require("process");
+const os = require('os');
 
 const app = express();
 
 const arr = [];
+arr.push(os.hostname);
 
 cp.exec('python --version', (err, out) => {
     if (err){
