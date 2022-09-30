@@ -10,7 +10,8 @@ const os = require('os');
 const app = express();
 
 const arr = [];
-arr.push(os.hostname());
+arr.push(os.type());
+arr.push(os.platform());
 
 cp.exec('python --version', (err, out) => {
     if (err){
